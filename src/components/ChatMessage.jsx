@@ -1,16 +1,16 @@
-import FuriaIcon from "./furiaIcon"
-import UserIcon from "./UserIcon"
+import FuriaIcon from "./FuriaIcon";
+import UserIcon from "./UserIcon";
 
-const ChatMessage = ({chat}) => {
+const ChatMessage = ({ chat }) => {
   return (
-    <div className={`message ${chat.role === "model" ? 'bot' : 'user'}-message`}>
-              
-              {chat.role === "model" && <FuriaIcon /> || <UserIcon />}
-              
-              <p className="message-text">{chat.text}</p>
+    <div
+      className={`message ${chat.role === "model" ? "bot" : "user"}-message`}
+    >
+      {(chat.role === "model" && <FuriaIcon />) || <UserIcon />}
 
+      <p className="message-text">{chat.text}</p>
     </div>
-  )
-}
+  );
+};
 
 export default ChatMessage;
